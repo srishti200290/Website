@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+        background-color: beige;
+      }
+   h1{  
+        font-size: 35px;
+        padding-top: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 2px lightblue;
+    }
+      img{
+        height: 160px;
+        width: 130px;
+        margin-left: 120px;
+     }
+       h4{
+        font-size: 25px;
+        margin-left: 70px;
+    }
+       p{
+        font-size: 18px;
+        margin-left: 90px;
+        margin-right: 70px;
+       
+       }
+       .navbar {
+       background-color: cadetblue;
+        font-size: 18px;
+        padding-left: 18px;
+       }
+       .navbar-brand{
+        font-size: 20px;
+        margin-left: 20px;
+       }
+       .navbar a{
+          color:black;
+       }
+     
+       h5{
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 30px;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: cadetblue;
+        color:black;
+
+       }
+       h6{
+        font-weight: bold;
+        font-size: 18px;
+        margin-left:90px; 
+        margin-right: 100px;
+       }
+       footer{
+        border: 1px solid black;
+        height: 60px;
+        width: 100%;
+        color: black;
+        padding: 40px;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-top: 47px;
+        text-align: center;
+        background-color: cadetblue;
+      }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-success">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Learn C++</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="intro.html">Introduction</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cantent<span
+                        class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="function.html">Function</a></li>
+                    <li><a href="inheritance.html">Inheritance</a></li>
+                    <li><a href="data encapsulation.html">Data encapsulation</a></li>
+                    <li><a href="manipulator.html">Manipulator</a></li>
+                    <li><a href="constructor.html">Constructors and Destructors</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">contact</a></li>
+           
+        </ul>
+
+    </nav>
+    <content>
+        <h1><u>Function</u></h1><br>
+        <u>
+            <h4>C++ Function :-</h4>
+        </u>
+        <h6>A function is a group of statements that together perform a task. Every C++ program has at least one
+            function, which is main(),and all the most trivial programs can define additional functions.</h6>
+            <p>You can divide up your code into separate functions. How you divide up your code among different functions
+            is up to you, but logically the division usually is such that each function performs a specific task.
+            A function declaration tells the compiler about a function's name, return type, and parameters. A function
+            definition provides the actual body of the function.</p><br>
+        <u>
+            <h4>Advantage of functions in C:-</h4>
+        </u>
+        <p>1) Code Reusability:<br>
+            By creating functions in C++, you can call it many times. So we don't need to write the same code again and
+            again.<br>
+            2) Code optimization:<br>
+            It makes the code optimized, we don't need to write much code.<br>
+            Suppose, you have to check 3 numbers (531, 883 and 781) whether it is prime number or not. Without using
+            function, you need to write the prime number logic 3 times. So, there is repetition of code. </p><br>
+        <u>
+            <h4>Types of Functions:-</h4>
+        </u>
+        <h4>There are two types of functions in C programming:</h4>
+        <p>1. Library Functions: are the functions which are declared in the C++ header files such as ceil(x), cos(x),
+            exp(x), etc.<br>
+            2. User-defined functions: are the functions which are created by the C++ programmer, so that he/she can use
+            it many times.
+            It reduces complexity of a big program and optimizes the code. </p><br>
+        <u>
+            <h4>Declaration of a function:-</h4>
+        </u>
+        <p> The syntax of creating function in C++ language is given below:</p>
+            <h6>return_type function_name(data_type parameter...) <br>
+            {<br>
+            //code to be executed <br>
+            } </h6><br>
+        <u>
+            <h4>Example:-</h4>
+        </u>
+        <h5>#include &lt;iostream&gt; <br>
+            using namespace std;<br>
+            void func() { <br>
+            static int i=0; //static variable <br>
+            int j=0; //local variable <br>
+            i++; <br>
+            j++; <br>
+            cout<<" i=" << i <<" and j=" << j << endl;<br>    
+        }  <br>        
+        int main()<br>  
+        {<br>  
+         func(); <br>   
+         func();<br>    
+         func();<br>    
+        } </h5>
+        <u><h4>Output:-</h4></u>
+         <h5>i= 1 and j= 1<br>
+        i= 2 and j= 1<br>
+        i= 3 and j= 1</h5><br>
+        <u><h4>Call by value and call by reference in C++:-</h4></u>
+        <h6>There are two ways to pass value or data to function in C language: call by value and call by reference. <br>
+        Original value is not modified in call by value but it is modified in call by reference.</h6><br>
+        <u><h4>Call by value in C++:-</h4></u>
+        <p>In call by value, original value is not modified.<br>
+        In call by value, value being passed to the function is locally stored by the function parameter in stack memory location.
+         If you change the value of function parameter, it is changed for the current function only. It will not change the value of variable inside the caller method such as main().</p>
+        <u><h4>Example:-</u></h4>
+           <h5>#include &lt;iostream&gt;<br>
+            using namespace std; <br>  
+            void change(int data); <br> 
+            int main()  <br> 
+            {  <br> 
+            int data = 3; <br>  
+            change(data);  <br> 
+            cout << " Value of the data is: " << data<< endl;<br> 
+            return 0; <br>  
+            }  <br> 
+            void change(int data)  <br> 
+            {   <br>
+            data = 5; <br> 
+            } </h5> 
+        <h4><u>Output:-</u></h4>
+        <h5>Value of the data is: 3</h5><br>
+        <h4><u>Call by reference in C++:-</u></h4>
+        <p>In call by reference, original value is modified because we pass reference (address).
+         Here, address of the value is passed in the function, so actual and formal arguments share the same address space. 
+        Hence, value changed inside the function, is reflected inside as well as outside the function.</p>
+        <u><h4>Example:-</h4></u>
+        <h5>#include &lt;iostream&gt;  <br> 
+            using namespace std;  <br>   
+            void swap(int *x, int *y) <br>  
+            {  <br> 
+             int swap; <br>  
+             swap=*x;  <br> 
+             *x=*y;  <br> 
+             *y=swap;  <br> 
+            }  <br> 
+            int main()  <br>  
+            {  <br>   
+             int x=500, y=100;  <br>   
+             swap(&x, &y);  // passing value to function  <br> 
+             cout<< " Value of x is: " << x << endl; <br> 
+             cout<< " Value of y is: "<< y << endl;  <br> 
+             return 0; <br>  
+            } </h5>
+            <u><h4>Output:-</h4></u>
+            <h5>Value of x is: 100<br>
+            Value of y is: 500 </h5><br>
+            <u><h4>Function overloading in c++:-</h4></u>
+           <p>Function Overloading is defined as the process of having two or more function with the same name, but different in parameters is known as function overloading in C++.
+            In function overloading, the function is redefined by using either different types of arguments or a different number of arguments. It is only through these differences 
+            compiler can differentiate between the functions.</p>
+            <u><h4>Example:-</h4></u>
+               <h5>#include &lt;iostream&gt; <br>   
+                using namespace std; <br>   
+                class Cal { <br>   
+                    public: <br>   
+                static int add(int a,int b){ <br>     
+                        return a + b; <br>     
+                    } <br>     
+                static int add(int a, int b, int c) <br>     
+                    { <br>     
+                        return a + b + c; <br>     
+                    }  <br>    
+                }; <br>
+                   int main(void) {  <br>  
+                    Cal C; <br>                          //     class object declaration.   
+                    cout << C.add(10, 20)<< endl; <br>     
+                    cout << C.add(12, 20, 23); <br>    
+                   return 0; <br>   
+                   } </h5> 
+                <u><h4>Output:-</h4></u>
+                   <h5>30<br>
+                   55</h5><br>
+            <u><h4>Function overriding in c++ :-</h4></u>
+           <p>If derived class defines same function as defined in its base class, it is known as function overriding in C++. It is used to achieve runtime polymorphism.
+            It enables you to provide specific implementation of the function which is already provided by its base class.</p>
+            <u><h4>Example :-</h4></u>
+            <h5>#include &lt;iostream&gt; 
+                using namespace std; <br> 
+                class Animal { <br> 
+                    public: <br> 
+                void eat(){ <br>   
+                cout << " Eating..."; <br>
+                } <br>
+                }; <br>
+                class Dog: public Animal <br>
+                { <br>
+                public:<br>
+                void eat() <br>
+                { <br>
+                cout << " Eating bread..." ; <br>
+                    {
+                    }; <br>
+                    int main(void) { <br>
+                    Dog d = Dog();<br>
+                    d.eat(); <br>
+                    return 0;<br>
+                    } </h5>
+        <u>
+            <h4>Output :-</h4>
+        </u>
+        <h5> Eating bread...<br>
+        </h5>
+    </content>
+
+    <footer>@Copyright</footer>
+</body>
+
+</html>

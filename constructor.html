@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <title>Document</title>
+    <style>
+    body{
+      background-color: beige;
+    }
+    h1{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 2px lightblue;
+    }
+    h5{
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 30px;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: cadetblue;
+        color:black;
+       }
+       h4{
+        font-size: 25px;
+       margin-left: 90px;}
+       p{
+        font-size: 18px;
+        margin-left: 110px;
+        margin-right: 100px;
+       }
+       .navbar {
+       background-color: cadetblue;
+        font-size: 18px;
+        padding-left: 18px;
+       
+       }
+       .navbar a{
+        color:black;
+        
+       }
+       .navbar-brand{
+        font-size: 20px;
+        margin-left: 20px;
+       }
+       
+       h6{
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 90px;
+        margin-right: 100px;
+       
+       }
+         footer{
+        border: 1px solid black;
+        height: 60px;
+        width: 100%;
+        color: black;
+        padding: 40px;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-top: 47px;
+        text-align: center;
+        background-color: cadetblue; 
+     }
+    </style>
+</head>
+<body>
+  <nav class="navbar bg-success"> 
+    <div class="navbar-header"> 
+       <a class="navbar-brand" href="#">Learn C++</a> 
+   </div> 
+   <ul class="nav navbar-nav"> 
+       <li><a href="home.html">Home</a></li> 
+       <li><a href="intro.html">Introduction</a></li> 
+       <li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdown"href="#">Cantent<span class="caret"></span></a>
+           <ul class="dropdown-menu">
+              <li><a href="function.html">Function</a></li>
+              <li><a href="inheritance.html">Inheritance</a></li>
+              <li><a href="data encapsulation.html">Data encapsulation</a></li>
+              <li><a href="manipulator.html">Manipulator</a></li>
+              <li><a href="constructor.html">Constructors and Destructors</a></li>
+           </ul>
+       </li> 
+      <li><a href="contact.html">contact</a></li> 
+      
+   </ul> 
+   
+</nav> 
+      <u><h1>Constructors And Destructors</h1></u><br>
+      <h4><u>Constructor in C++:-</u></h4>
+        <h6>Constructor in C++ is a special member function of a class whose task is to initialize the object of the class, 
+        it's special because it has the same name as that of the class.</h6><p> It is called a constructor because it constructs the value of data 
+        members at the time of object initialization. The compiler invokes the constructor whenever an object is created. Since a constructor 
+        defines the value to a data member, it has no return type.</p><br>
+      <u><h4>Syntax of Constructor:-</h4></u>
+        <h6>class scaler { <br>
+        public: <br>
+        scaler() { //constructor <br>
+        // constructor body }}; </h6><br>
+        <u><h4>Characteristics of Constructors in C++ :-</h4></u>
+          <p> A constructor in C++ cannot be inherited. Although a derived class can call the base class constructor. 
+          A derived class(i.e child class) contains all members and member functions(including constructors) of the base class.<br>
+           Constructor functions are not inherited and their addresses cannot be referenced.<br>
+           The constructor in C++ cannot be virtual.<br> 
+          A virtual table(also called vtable) is made for each class having one or more virtual functions.
+          Virtual functions ensure that the correct<br> function is called for an object regardless of the type of reference used for function call.
+          Whenever an object is created of such a class it contains a virtual-pointer which points to the<br>base of the corresponding vtable. 
+          Whenever there is a virtual function call, the vtable is used to refer to the function address. But when a constructor of a class is executed 
+          there is no<br> virtual table created yet in the memory, which means no virtual pointer is defined yet. As a result, a constructor cannot be declared virtual.</p><br>
+         <u><h4>Types of Constructors in C++ :- </h4></u>
+         <h4>There are 4 types of constructors in C++:</h4>
+         <p>1. Default Constructors<br>
+         2. Parameterized Constructors<br>
+         3. Copy Constructors<br>
+         4. Dynamic Constructors</p><br>
+         <u><h4>1.Default Constructor:- </h4></u>
+         <p>A constructor which does not receive any parameters is called a Default Constructor, or a Zero Argument Constructor.
+         In the default constructor, every object of the class is initialized with the same set of values.
+         Even if a constructor is not defined explicitly, the compiler will provide a default constructor implicitly.</p>
+         <u><h4>Syntax:-</h4></u>
+          <h6>Employee :: Employee() //default constructor without any arguments.</h6>
+         <h4><u>Example:-</u></h4>
+         <h5>class Employee { <br>
+            public: <br>
+            int age; <br>
+             //default constructor <br>
+             Employee() { <br>
+               //data member is defined with the help of default constructor <br>
+               age = 50; } <br>
+            }; <br>
+            int main() { <br>
+                //object of class Employee declared <br>
+                Employee e1; <br>
+                //prints value assigned by default constructor <br>
+                cout << e1.age; <br>
+                return 0;}</h5>
+          <h4><u>Output:</u></h4>
+          <h5>50 </h5><br>
+          <h4><u>2.Parameterized Constructor -</u></h4>
+          <p>In a default constructor it is not possible to initialize different objects with different initial values.
+           What if we need to pass arguments to constructors which are needed to initialize an object? In order to 
+           solve this issue, there is a different type of constructor called Parameterized Constructor.<br>
+         A Parameterized Constructor is a constructor that can accept one or more arguments. This helps programmers
+         to assign varied initial values to an object at the time of creation.</p><br>
+        <h4><u>Example:-</u></h4>
+        <h5> #include &lt;iostream&gt;<br>
+         using namespace std; <br>
+         class Employee { <br>
+            public: <br>
+            int age; <br>
+            Employee(int x) { // parameterized constructor <br>
+            age = x; //age assigned to value passed as argument while object declaration } <br>
+        };<br>
+         int main() { <br>
+             Employee c1(40); //object c1 declared with argument 40 which gets assigned to age <br>
+             Employee c2(30); <br>
+             Employee c2(30); <br>
+             Employee c3(50); <br>
+             cout << c1.age << "\n"; <br>
+             cout << c2.age << "\n"; <br>
+             cout << c3.age << "\n"; <br>
+             return 0;}</h5>
+             <h4><u>Output:</u></h4>
+            <h5> 40 <br>
+             30<br>
+             50 </h5><br><br>
+            <u><h4>3. Copy Constructor -</h4></u>
+             <p>Copy constructor is a type of constructor which is used to create a copy of an already existing object
+             of a class type. The compiler provides a default Copy Constructor to all the classes. Whenever there is
+             a need for an object with the same values for data members as of an already existing object, a copy 
+            constructor comes into picture. A copy constructor is invoked when an existing object is passed as a parameter.</p>
+            <h4><u>Syntax:-</u></h4>
+           <h6> Employee :: Employee(Employee &ptr) //copy constructor.</h6>
+            <h4><u>Example:-</u></h4>
+           <h5>#include &lt;iostream&gt; <br> 
+              using namespace std; <br> 
+              class A  <br>
+              {  <br>
+                 public: <br> 
+                  int x;  <br>
+                  A(int a)                // parameterized constructor. <br> 
+                  { <br> 
+                    x=a; <br> 
+                  }  <br>
+                  A(A &i)               // copy constructor  <br>
+                  {  <br>
+                      x = i.x;  <br>
+                  }  <br>
+              }; <br> 
+              int main() <br> 
+              {  <br>
+                A a1(20);               // Calling the parameterized constructor. <br> 
+               A a2(a1);                //  Calling the copy constructor. <br> 
+               cout << a2.x;<br>  
+                return 0;  <br>
+              }  <br></h5>
+          <h4><u>Output:</u></h4>
+            <h5>20:</h5><br>
+           <h4><u>4. Dynamic Constructor -</u></h4>
+           <p> When allocation of memory is done dynamically(i.e. Memory is allocated to variables at run-time of 
+            the program rather than at compile-time) using dynamic memory allocator new in a constructor, it is 
+            known as dynamic constructor. By using this, we can dynamically initialize the objects.</p>
+            <h4><u>Example:-</u></h4>
+            <h5>#include &lt;iostream&gt; <br>
+            using namespace std; <br>
+            class Employee { <br>
+              int* due_projects;<br> 
+               public: <br>
+                // default constructor <br>
+               Employee() { <br>
+                // allocating memory at run time <br>
+                due_projects = new int; <br>
+                *due_projects = 0; } <br>
+                // parameterized constructor <br>
+                Employee(int x) {<br>
+                 due_projects = new int; <br>
+                 *due_projects = x; }<br>
+                 void display() { <br>
+                 cout << *due_projects << endl; } <br>
+              };<br>
+              //main function <br>
+              int main() { <br>
+               // default constructor would be called <br>
+               Employee employee1 = Employee(); <br>
+               cout << "Due projects for employee1:\n";<br>
+               employee1.display(); <br>
+               // parameterized constructor would be called <br>
+               Employee employee2 = Employee(10);<br>
+               cout << "Due projects for employee2:\n"; <br>
+               employee2.display(); <br>
+               return 0;}</h5>
+               <h4><u>Output: </u></h4>
+               <h5>Due projects for employee1:<br>
+               0 <br>
+               Due projects for employee2: <br>
+               10</h5><br><br>
+          <h4><u>Destructor in C++ :-</u></h4>
+         <p>Destructor is a member function that is instantaneously called whenever an object is destroyed.the 
+          destructor is called automatically by the compiler when the object goes out of scope i.e. when a function 
+          ends the local objects created within it also gets destroyed with it. The destructor has the same name as the 
+          class name, but the name is preceded by a tilde(~). A destructor has no return type and receives no parameters.</p><br>
+          <u><h4>Characteristics of a Destructor in C++:-</h4> </u>
+          <p>  A destructor deallocates memory occupied by the object when it‟s deleted.<br>
+            A destructor cannot be overloaded. In function overloading, functions are declared with the same name in the 
+           same scope, except that each function has a different number of arguments and different definitions. But in a class, 
+           there is always a single destructor and it does not accept any parameters, hence, a destructor cannot be overloaded.<br>
+            A destructor is always called in the reverse order of the constructor. In C++ variables and objects are allocated on the Stack.The
+            Stack follows LIFO (Last-In-First-Out) pattern.So,the deallocation of memory and destruction is always carried out in the 
+           reverse order of allocation and construction. This can be seen in code below.<br>
+            A destructor can be written anywhere in the class definition. But to bring an amount of order to the code, 
+           a destructor is always defined at the end of the class definition.</p><br> 
+         <h4> <u>Syntax of Destructor:-</u></h4>
+          <h6>class scaler { <br>
+           public: <br>
+            scaler(); //constructor <br> 
+            ~scaler(); //destructor };</h6>
+          <h4><u>Example :-</u></h4>
+          <h5>#include &lt;iostream&gt;<br>
+          using namespace std;<br>
+          class Department { <br>
+            public: <br>
+            Department() { //constructor is defined <br>
+            cout << "Constructor Invoked for Department class" << endl; } <br>
+            ~Department() { <br>
+            //destructor is defined <br>
+            cout << "Destructor Invoked for Department class" << endl; }<br> 
+          };<br>
+          class Employee { <br>
+            public: <br>
+            Employee() { <br>
+              //constructor is defined <br>
+              cout << "Constructor Invoked for Employee class" << endl; } <br>
+              ~Employee() { <br>
+              //destructor is defined <br>
+              cout << "Destructor Invoked for Employee class" << endl; } <br>
+          };<br>
+             int main(void) { <br>
+              Department d1; //creating an object of Department <br>
+              Employee e2; //creating an object of Employee <br>
+              return 0;} </h5>
+            <h4><u>output:</u></h4>
+            <h5>Constructor Invoked for Department class. <br>
+            Constructor Invoked for Employee class. <br>
+            Destructor Invoked for Employee class. <br>
+            Destructor Invoked for Department class. </h5><br><br>
+         <h4><u>Implementation of Constructors and Destructors in C++ -</u></h4>
+         <p>1<br> 
+         Constructor is invoked to initialize the object of a class by the compiler.<br> 
+         Destructor is invoked when the instance is destroyed.<br> 
+         2<br> 
+         Declared as Class_Name(arguments if any){//constructor body}<br> 
+         Declared as~Class_Name(){};<br> 
+         3<br> 
+         Constructor can receive parameters.<br> 
+         Destructor cannot accept any parameters.<br> 
+         4<br>
+         Constructor is used to initialize an object of the class and assign values to data members corresponding to the class.<br> 
+         While destructor is used to deallocate the memory of an object of a class.<br>
+         5 <br>        
+         There can be multiple constructors for the same class.<br>
+         In a class, there is always a single destructor.<br>
+         6<br>
+         Constructor can be overloaded.<br>
+         Destructor can‟t be overloaded.</p><br>
+    
+    </content>
+    <footer>@Copyright</footer> 
+</body>
+</html>

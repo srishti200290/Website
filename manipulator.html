@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      body{
+        background-color: beige;
+      }
+      h1{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 2px lightblue;
+    }
+    h5{
+       font-size: 18px;
+        padding-left:10px;
+        padding-right: 30px;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: cadetblue;
+        color:black;
+       }
+      h4{
+        font-size: 25px;
+       margin-left: 60px;}
+       p{
+        font-size: 18px;
+        margin-left: 80px;
+        margin-right: 80px;
+       }
+       .navbar {
+       background-color:cadetblue;
+        font-size: 18px;
+        padding-left: 18px;
+       }
+       .navbar-brand{
+        font-size: 20px;
+        margin-left: 20px;
+       }
+       .navbar a{
+        color: black;
+       }
+       
+       h6{
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 90px;
+        margin-right: 100px;
+       }
+         footer{
+         border: 1px solid black;
+        height: 60px;
+        width: 100%;
+        color: black;
+        padding: 40px;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-top: 47px;
+        text-align: cente;
+        background-color: cadetblue;
+         }
+    </style>
+</head>
+<body>
+  <nav class="navbar bg-success"> 
+    <div class="navbar-header"> 
+       <a class="navbar-brand" href="#">Learn C++</a> 
+   </div> 
+   <ul class="nav navbar-nav"> 
+       <li><a href="home.html">Home</a></li> 
+       <li><a href="intro.html">Introduction</a></li> 
+       <li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdown"href="#">Cantent<span class="caret"></span></a>
+           <ul class="dropdown-menu">
+              <li><a href="function.html">Function</a></li>
+              <li><a href="inheritance.html">Inheritance</a></li>
+              <li><a href="data encapsulation.html">Data encapsulation</a></li>
+              <li><a href="manipulator.html">Manipulator</a></li>
+              <li><a href="constructor.html">Constructors and Destructors</a></li>
+           </ul>
+       </li> 
+      <li><a href="contact.html">contact</a></li> 
+      
+   </ul> 
+   
+</nav>
+    <content>
+           <u><h1>Manipulator</h1></u><br>
+        <h4><u>Manipulator in c++ :-</u></h4>
+            <h6>Manipulators are helping functions that can modify the input/output stream. It does not mean that we change the value of a variable,
+            it only modifies the I/O stream using insertion (<<) and extraction (>>) operators.<br>For example, if we want to print the hexadecimal value of 100 then we can print it as:
+            cout << setbase(16)<< 100</h6><br>
+            <h4><u>Types of Manipulators:</u></h4><br>
+            <h4>There are various types of manipulators:-</h4>
+            <u><h4>1. Manipulators without arguments: </h4></u>
+            <p>The most important manipulators defined by the IOStream library are provided below.<br>
+             <b>endl:</b> It is defined in ostream. It is used to enter a new line and after entering a new line it flushes (i.e. it forces all the output written on the screen or in the file) the output stream. <br>
+             <b>ws:</b> It is defined in istream and is used to ignore the whitespaces in the string sequence. <br>
+             <b>ends:</b> It is also defined in ostream and it inserts a null character into the output stream. It typically works with std::ostrstream, when the associated output buffer needs to be null-terminated to be processed as a C string. <br>
+             <b>flush:</b> It is also defined in ostream and it flushes the output stream, i.e. it forces all the output written on the screen or in the file. Without flush, the output would be the same, but may not appear in real-time.</p><br>
+            <h4><u>Examples:-</u></h4>
+                <h5>#include &lt;iostream&gt;<br>
+                #include &lt;istream&gt;<br>
+                #include &lt;sstream&gt;<br>
+                #include &lt;string&gt;<br>
+                using namespace std;<br>
+                int main()<br>
+                {<br>
+                istringstream str(" Programmer");<br>
+                string line;<br>
+                // Ignore all the whitespace in string<br>
+                // str before the first word.<br>
+                getline(str >> std::ws, line);<br>
+                // you can also write str>>ws<br>
+                // After printing the output it will automatically<br>
+                // write a new line in the output stream.<br>
+                cout << line << endl;<br>
+                // without flush, the output will be the same.<br>
+                cout << "only a test" << flush;<br>
+                // Use of ends Manipulator<br>
+                cout << "\na";<br>
+                // NULL character will be added in the Output<br>
+                cout << "b" << ends;<br>
+                cout << "c" << endl;<br>
+                return 0;} </h5>
+                <u><h4>Output:-</h4></u>
+                <h5>Programmer<br>
+                only a test<br>
+                abc</h5><br>
+                <u><h4>2. Manipulators with Arguments:-</h4></u>
+                 <p>Some of the manipulators are used with the argument like setw (20), setfill („*‟), and many more. <br>
+                These all are defined in the header file. If we want to use these manipulators then we must include this header file in our program. For Example, 
+                you can use following manipulators to set minimum width and fill the empty space with any character you want: std::cout << std::setw (6) << std::setfill (‟*‟); </p>
+               <h4>  Some important manipulators in &lt;iomanip&gt; are:-</h4>
+                 <p>1. <b>setw (val):</b> It is used to set the field width in output operations.<br>
+                 2. <b>setfill (c):</b> It is used to fill the character „c‟ on output stream.<br>
+                 3. <b>setprecision (val):</b> It sets val as the new value for the precision of floating-point values.<br> 
+                 4. <b>setbase(val):</b> It is used to set the numeric base value for numeric values. <br>
+                 5.<b>setiosflags(flag):</b> It is used to set the format flags specified by parameter mask. <br>
+                 6. <b>resetiosflags(m):</b> It is used to reset the format flags specified by parameter mask.</p><br>
+                 <h4> Some important manipulators in &lt;ios&gt; are:-</h4>
+                 <p>1. <b>showpos:</b> It forces to show a positive sign on positive numbers.<br> 
+                 2. <b>noshowpos:</b> It forces not to write a positive sign on positive numbers. <br>
+                 3. <b>showbase:</b> It indicates the numeric base of numeric values.<br> 
+                 4. <b>uppercase:</b> It forces uppercase letters for numeric values.<br>
+                 5. <b>nouppercase:</b> It forces lowercase letters for numeric values. <br>
+                 6. <b>fixed: </b>It uses decimal notation for floating-point values. <br>
+                 7. <b>scientific:</b> It uses scientific floating-point notation. <br>
+                 8. <b>hex:</b> Read and write hexadecimal values for integers and it works same as the setbase(16). <br>
+                 9. <b>dec:</b> Read and write decimal values for integers i.e. setbase(10). <br>
+                 10.<b> oct:</b> Read and write octal values for integers i.e. setbase(10). <br>
+                 11. <b>left:</b> It adjusts output to the left.<br> 
+                 12. <b>right:</b> It adjusts output to the right.</p><br>
+                 <u><h4>Example:</u></h4>
+                   <h5>#include &lt;iomanip&gt;<br>
+                    #include &lt;iostream&gt;<br>
+                    using namespace std;<br>
+                    int main()<br>
+                    {<br>
+                    double A = 100;<br>
+                    double B = 2001.5251;<br>
+                    double C = 201455.2646;<br>
+                    // We can use setbase(16) here instead of hex<br>
+                    // formatting<br>
+                    cout << hex << left << showbase << nouppercase;<br>
+                    // actual printed part<br>
+                    cout << (long long)A << endl;<br>
+                    // We can use dec here instead of setbase(10)<br>
+                    // formatting<br>
+                    cout << setbase(10) << right << setw(15)<br>
+                    << setfill('_') << showpos<br>
+                    << fixed << setprecision(2);<br>
+                    // actual printed part<br>
+                    cout << B << endl;<br>
+                    // formatting<br>
+                    cout << scientific << uppercase<br>
+                    << noshowpos << setprecision(9);<br>
+                   // actual printed part<br>
+                   cout << C << endl;}<br></h5>
+                   <h4><u>Output:-</u></h4>
+                    <h5>0x64<br>
+                    _______+2001.53<br>
+                   2.014552646E+05<br>
+                    </h5>
+    </content>
+    <footer>@Copyright</footer> 
+</body>
+</html>

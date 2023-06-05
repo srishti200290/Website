@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      body{
+        background-color: beige;
+      }
+         h1{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 2px lightblue;
+    }
+    h4{
+        font-size: 25px;
+       margin-left: 60px;
+     }
+       p{
+        font-size: 18px;
+        margin-left: 80px;
+        margin-right: 80px;
+       }
+       .navbar {
+       background-color: cadetblue;
+        font-size: 18px;
+        padding-left: 18px;
+       }
+       .navbar-brand{
+        font-size: 20px;
+        margin-left: 20px;
+       }
+       .navbar a{
+        color:black;
+       } 
+      
+       img{
+        height: 170px;
+        width: 150px;
+        margin-left: 100px;
+       
+     }
+    .a1{
+        height: 170px;
+        width: 150px;
+        float: right;
+       }
+       h5{
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 30px;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: cadetblue;
+        color:black;
+       }
+       h6{
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 90px;
+        margin-right: 100px;
+       }
+       footer{
+        border: 1px solid black;
+        height: 60px;
+        width: 100%;
+        color: black;
+        padding: 40px;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-top: 47px;
+        text-align: center;
+        background-color: cadetblue;
+        
+        
+      }
+     
+     </style>
+</head>
+
+<body>
+  <nav class="navbar"> 
+    <div class="navbar-header"> 
+       <a class="navbar-brand" href="#">Learn C++</a> 
+   </div> 
+   <ul class="nav navbar-nav"> 
+       <li><a href="home.html">Home</a></li> 
+       <li><a href="intro.html">Introduction</a></li> 
+       <li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdown"href="#">Cantent<span class="caret"></span></a>
+           <ul class="dropdown-menu">
+              <li><a href="function.html">Function</a></li>
+              <li><a href="inheritance.html">Inheritance</a></li>
+              <li><a href="data encapsulation.html">Data encapsulation</a></li>
+              <li><a href="manipulator.html">Manipulator</a></li>
+              <li><a href="constructor.html">Constructors and Destructors</a></li>
+           </ul>
+       </li> 
+      <li><a href="contact.html">contact</a></li>
+       
+   </ul>
+   
+</nav>
+      <u><h1>Inheritance </h1></u><br>
+         <h4><u>Inheritance in c++:-</u></h4>
+            <h6>One of the most important concepts in object-oriented programming is that of inheritance. Inheritance allows
+            us to define a class in terms of another class, which makes it easier to create and maintain an application.
+            This also provides an opportunity to reuse the code functionality and fast implementation time.</h6>
+            <p>When creating a class, instead of writing completely new data members and member functions, the programmer
+            can designate that the new class should inherit the members of an existing class. This existing class is
+            called the base class, and the new class is referred to as the derived class.</p><br>
+            <u><h4>Example :-</h4></u>
+           <p>Here we have two classes Teacher and MathTeacher,the MathTeacher class inherits the Teacher class which
+            means Teacher is a parent class and MathTeacher is a child class.The child class can use the property
+            collegeName of parent class.<br><br>
+            <h5>#include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            class Teacher { <br>
+            public: <br>
+            Teacher(){ <br>
+            cout <<" Hey Guys, I am a teacher " << endl;} <br>
+              string collegeName = " Beginnersbook";}; <br>
+                //This class inherits Teacher class <br>
+                class MathTeacher: public Teacher { <br>
+                public:<br>
+                MathTeacher(){ <br>
+                cout << " I am a Math Teacher" << endl; }<br>
+                    string mainSub = "Math";<br>
+                    string name = "Negan";};<br>
+                    int main() { <br>
+                    MathTeacher obj;<br>
+                    cout<<" Name:" << obj.name << endl;<br>
+                        cout<< " College Name:" << obj.collegeName << endl;<br>
+                        cout<< "Main Subject:" << obj.mainSub << endl;<br>
+                            return 0;}</h5>
+                             <u><h4>Output:-</h4></u>
+                              <h5> Hey Guys, I am a teacher<br>
+                                I am a Math Teacher <br>
+                                Name: Negan<br>
+                                College Name: Beginnersbook<br>
+                                Main Subject: Math</h5><br>
+                                <h4><u>Type of Inheritance:</u></h4>
+                               <p> 1) Single inheritance<br>
+                                2) Multilevel inheritance <br>
+                                3) Multiple inheritance <br>
+                                4) Hierarchical inheritance<br>
+                                5) Hybrid inheritance</p><br>
+                                <u><h4>1.Single inheritance :-</h4></u>
+                                <h6>In Single inheritance one class inherits one class exactly. </h6><p>For example: Lets say we
+                                have class A and B<br>
+                                B inherits A </p>
+                                
+                                <img src="sing.png"><br><br>
+                            
+                                <h4><u>Example:-</u></h4>
+                               <h5>#include &lt;iostream&gt; <br>
+                                using namespace std;<br>
+                                class Account { <br>
+                                public: <br>
+                                float salary = 60000; <br>
+                                }; <br>
+                                class Programmer: public Account { <br>
+                                public: <br>
+                                float bonus = 5000; <br>
+                                }; <br>
+                                int main(void) {<br>
+                                Programmer p1; <br>
+                                cout<<" Salary: "<< p1.salary<< endl;<br>    
+                                cout<<" Bonus:" << p1.bonus<< endl;<br>
+                                    return 0; <br>
+                                    } </h5>
+                                    <h4><u>Output:-</u></h4>
+                                    <h5>Salary: 60000<br>
+                                    Bonus: 5000</h5><br>
+                                    <h4><u>2.Multilevel Inheritance :- </u></h4>
+                                    <h6>In this type of inheritance one class inherits another child class.</h6>
+                                   <p> C inherits B and B inherits A </p>
+                                    
+                                    <img src="multil.png"></p>
+                                    
+                                    <u><h4>Example:-</h4></u>
+                                    <h5>#include &lt;iostream&gt; <br>
+                                    using namespace std; <br>
+                                    class A { <br>
+                                    public: <br>
+                                    A(){ <br>
+                                    cout<< " Constructor of A class" << endl; }<br>
+                                        }; class B: public A { <br>
+                                        public: <br>
+                                        B(){ <br>
+                                        cout<< " Constructor of B class" << endl; } <br>
+                                            }; <br>
+                                            class C: public B { <br>
+                                            public:<br>
+                                            C(){ <br>
+                                            cout<< " Constructor of C class" << endl; } <br>
+                                                }; <br>
+                                                int main() { <br>
+                                                C obj; <br>
+                                                return 0;} </h5>
+                                                <h4><u>Output:-</u></h4>
+                                                <h5>Constructor of A class <br>
+                                                Constructor of B class <br>
+                                                Constructor of C class</h5><br>
+                                                <u><h4>3.Multiple Inheritance:-</h4></u>
+                                                <h6>In multiple inheritance, a class can inherit more than one class. This
+                                                means that in this type of inheritance a single child class can have
+                                                multiple parent classes.</h6>
+                                                <p>C inherits A and B both</p>
+                                                <img src="multi.png">
+                                                <u><h4>Example:-</h4></u>
+                                                <h5>#include &lt;iostream&gt;<br>
+                                                using namespace std; <br>
+                                                class A { <br>
+                                                public: <br>
+                                                A(){ <br>
+                                                cout<<" Constructor of A class" << endl; <br>
+                                                    }<br>
+                                                    };<br>
+                                                    class B { <br>
+                                                    public: <br>
+                                                    B(){ <br>
+                                                    cout<<" Constructor of B class" << endl; } <br>
+                                                        };<br>
+                                                        class C: public A, public B { <br>
+                                                        public: <br>
+                                                        C(){ <br>
+                                                        cout<<" Constructor of C class" << endl; } <br>
+                                                            };<br>
+                                                            int main() {<br>
+                                                            C obj; <br>
+                                                            return 0;} </h5>
+                                                            <h4><u>Output:-</u></h4>
+                                                            <h5>Constructor of A class <br>
+                                                            Constructor of B class <br>
+                                                            Constructor of C class </h5><br>
+                                                            <u><h4>4.Hierarchical Inheritance:-</h4></u>
+                                                            <h6>In this type of inheritance, one parent class has more than
+                                                            one child class.</h6><p>For example:
+                                                            Class B and C inherits class A </p>
+                                                            <img src="hiera.png">
+                                                            <u><h4>Example:-</h4></u>
+                                                            <h5>#include &lt;iostream&gt; <br>
+                                                            using namespace std;<br>
+                                                            class A { <br>
+                                                            public: <br>
+                                                            A(){ <br>
+                                                            cout<<" Constructor of A class" << endl; } <br>
+                                                                }; <br>
+                                                                class B: public A { <br>
+                                                                public: <br>
+                                                                B(){ <br>
+                                                                cout <<" Constructor of B class" << endl;}<br>
+                                                                    };<br>
+                                                                    class C: public A{ <br>
+                                                                    public: <br>
+                                                                    C(){ <br>
+                                                                    cout << " Constructor of C class " << endl; } <br>
+                                                                        }; <br>
+                                                                        int main() { <br>
+                                                                        //Creating object of class C <br>
+                                                                        C obj; <br>
+                                                                        return 0;} </h5>
+                                                                        <h4><u>Output:-</u></h4>
+                                                                        <h5>Constructor of A class <br>
+                                                                        Constructor of C class </h5><br>
+                                                                        <u> <h4>5.Hybrid Inheritance:-</h4></u>
+                                                                        <h6>As the name hybrid suggests, it combines two or more types of inheritances. Due to the mixture of more types of inheritance, it is one of the most complexes.<br>
+                                                                        As you can see from the above image, hybrid inheritance is the combination of hierarchical and multiple inheritances.</h6>
+                                                                        <p>Here, class A is the parent class, classes B, and C are the child classes, and classes B and C are the parent class for class D, which inherits its properties <br>
+                                                                        from classes B and C.</p>
+                                                                        <img src="hyb.png">
+                                                                       <h4><u>Example:-</u></h4>
+                                                                        <h5>#include &lt;iostream&gt;<br>
+                                                                         using namespace std;<br>
+                                                                        class Animal<br>
+
+                                                                       {<br>
+ 
+                                                                     public:<br>
+
+                                                                     // constructor of the base class <br>
+
+                                                                      Animal()<br>
+
+                                                                     {<br>
+
+                                                                    cout << "I am an animal.\n\n";<br>
+
+                                                                     }<br>
+                                                                     };<br>
+
+                                                                    // derived class<br>
+
+                                                                   class Dog: public Animal<br>
+                                                                   {<br>
+
+                                                                   };<br>
+                                                                  // derived class<br>
+
+                                                                  class Pig: public Animal<br>
+                                                                  {<br>
+
+                                                                };<br>
+                                                                 // derived class<br>
+
+                                                                class Cute: public Dog, public Pig<br>
+                                                                {<br>
+
+                                                                 };<br>
+                                                                int main()<br>
+                                                                {<br>
+                                                               // create an object of the child's class<br>
+                                                                 Cute obj;<br>
+                                                                  }</h5>
+                                                             <h4><u>Output:-</u></h4>
+                                                             <h5>I am an animal.<br>
+                                                             I am an animal.<br>
+
+                                                             </h5>
+                                                          </content>
+                                                            <footer>@Copyright</footer> 
+                                                            </body>
+                                                         </html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+     body{
+        background-color: beige;
+     }
+     h1{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 2px lightblue;
+    }
+    h5{ 
+       
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 30px;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: cadetblue;
+        color:black;
+       }
+       h4{
+        font-size: 25px;
+       margin-left:40px;}
+       p{
+        font-size: 18px;
+        margin-left: 70px;
+        margin-right: 40px;
+       }
+       .navbar {
+       background-color: cadetblue;
+        font-size: 18px;
+        padding-left: 18px;
+       }
+       .navbar-brand{
+        font-size: 20px;
+        padding-left: 20px;
+       }
+       .navbar a{
+        color:black;
+       }
+      
+       h6{
+       
+       font-weight: bold;
+        font-size: 18px;
+        margin-left: 90px;
+        margin-right: 100px;
+       }
+         footer{
+        border: 1px solid black;
+        height: 60px;
+        width: 100%;
+        color: black;
+        padding: 40px;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-top: 47px;
+        text-align: center;
+        background-color: cadetblue;
+        
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar bg-success"> 
+    <div class="navbar-header"> 
+       <a class="navbar-brand" href="#">Learn C++</a> 
+   </div> 
+   <ul class="nav navbar-nav"> 
+       <li><a href="home.html">Home</a></li> 
+       <li><a href="intro.html">Introduction</a></li> 
+       <li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdown"href="#">Cantent<span class="caret"></span></a>
+           <ul class="dropdown-menu">
+              <li><a href="function.html">Function</a></li>
+              <li><a href="inheritance.html">Inheritance</a></li>
+              <li><a href="data encapsulation.html">Data encapsulation</a></li>
+              <li><a href="manipulator.html">Manipulator</a></li>
+              <li><a href="constructor.html">Constructors and Destructors</a></li>
+           </ul>
+       </li> 
+      <li><a href="contact.html">contact</a></li>
+       
+   </ul> 
+   
+</nav>
+ <content>
+        <h1><u>Data Encapsulation</u></h1><br>
+        <h4><u>Data encapsulation in c++ :-</u></h4>
+    <h6>Encapsulation is an Object Oriented Programming concept that binds together the data and functions that manipulate the data, and that keeps both safe from outside interference and misuse. Data encapsulation led to the important OOP concept of data hiding.
+     Data encapsulation is a mechanism of bundling the data, and the functions that use them and data abstraction is a mechanism of exposing only the interfaces and hiding the implementation details from the user.</h6>
+    <p>C++ supports the properties of encapsulation and data hiding through the creation of user-defined types, called classes. We already have studied that a class can contain private, protected and public members. By default, all items defined in a class are private. For example </p>
+   <h5>class Box {<br>
+   public:<br>
+   double getVolume(void) {<br>
+  return length * breadth * height;<br>
+ }<br>
+ private:<br>
+ double length; // Length of a box<br>
+ double breadth; // Breadth of a box<br>
+ double height; // Height of a box };</h5><br>
+ <p>The variables length, breadth, and height are private. This means that they can be accessed only by other members of the Box class, and not by any other part of your program. This is one way encapsulation is achieved.<br>
+ To make parts of a class public (i.e., accessible to other parts of your program), you must declare them after the public keyword. All variables or functions defined after the public specifier are accessible by all other functions in your program.<br>
+ Making one class a friend of another exposes the implementation details and reduces encapsulation. The ideal is to keep as many of the details of each class hidden from all other classes as possible.</p><br>
+ <h4><u>Example:-</u></h4>
+<p>Any C++ program where you implement a class with public and private members is an example of data encapsulation and data abstraction. Consider the following example <br>
+   <h5>#include &lt;iostream&gt;<br>
+    using namespace std;<br>
+    class Adder {<br>
+    public:<br>
+    // constructor<br>
+    Adder(int i = 0) {<br>
+    total = i; }<br>
+    // interface to outside world<br>
+    void addNum(int number) {<br>
+    total += number; }<br>
+    // interface to outside world<br>
+    int getTotal() {<br>
+    return total; };<br>
+    private:<br>
+    // hidden data from outside world<br>
+    int total;};<br>
+    int main() {<br>
+    Adder a;<br>
+    a.addNum(10);<br>
+    a.addNum(20);<br>
+    a.addNum(30);<br>
+    cout << "Total " << a.getTotal() << endl;<br>
+    return 0;}</h5>
+   <p>When the above code is compiled and executed, it produces the following result- </p>
+    <h5>Total 60</h5><br>
+  
+</content>
+
+<footer>@Copyright</footer> 
+</body>
+</html>
